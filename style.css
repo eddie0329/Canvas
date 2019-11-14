@@ -1,0 +1,315 @@
+html, body {
+  height: 100%;
+  line-height: 0;
+  background: #EFEFEF;
+}
+
+.container-fluid {
+  background: #EFEFEF;
+  height: 100vh;
+}
+
+
+#logoContainer {
+  display: flex;
+}
+
+#logoTitle {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #737373;
+  margin-top: 20px;
+  margin-left: auto;
+  
+}
+
+#logoImage {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+#captureButton {
+  display: flex;
+  width: 335px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  background: #cacaca;
+  border-radius: 20px;
+  cursor: default;
+}
+
+#captureIcon {
+  width: 25px;
+  height: 30px;
+  margin-top: 7px;
+  margin-left: 38px;
+}
+
+#captureButtonTitle {
+  font-size: 30px;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  margin-left: 28px;
+}
+
+#colorPickerButton {
+  display: flex;
+  width: 335px;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 55px;
+
+  background: #cacaca;
+  border-radius: 20px;
+}
+
+#colorPickerButtonTitle {
+  font-size: 30px;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+#spoidIcon {
+  width: 25px;
+  height: 27px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+#paletteColor1 {
+  background: rgba(255, 0, 0, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 65px;
+  margin-left: -230px;
+}
+#paletteColor2 {
+  background: rgba(253, 137, 0, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 65px;
+  margin-left: 30px;
+  
+}
+#paletteColor3 {
+  background: rgba(250, 255, 0, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 65px;
+  margin-left: 30px;
+}
+#paletteColor4 {
+  background: rgba(37, 254, 2, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 65px;
+  margin-left: 30px;
+}
+#paletteColor5 {
+  background: rgba(0, 206, 251, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 130px;
+  margin-left: -270px;
+}
+#paletteColor6 {
+  background: rgba(5, 0, 255, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 130px;
+  margin-left: 30px;
+}
+#paletteColor7 {
+  background: rgba(112, 0, 255, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 130px;
+  margin-left: 30px;
+}
+#paletteColor8 {
+  background: rgba(255, 0, 214, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 130px;
+  margin-left: 30px;
+}
+
+#paintButton {
+  display: flex;
+  width: 335px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 55px;
+
+  background: #cacaca;
+  border-radius: 20px;
+}
+
+#penIcon {
+  width: 25px;
+  height: 27px;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+#paintButtonTitle {
+  font-size: 30px;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  margin-left: 50px;
+}
+
+#paintComponentContainer {
+  display: flex;
+}
+
+#paintColor {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.5);
+  border: none;
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+#paintColorOption1 {
+  background: rgba(255, 0, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption2 {
+  background: rgba(253, 137, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption3 {
+  background: rgba(250, 255, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption4 {
+  background: rgba(37, 254, 2, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption5 {
+  background: rgba(0, 206, 251, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption6 {
+  background: rgba(5, 0, 255, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption7 {
+  background: rgba(112, 0, 255, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+#paintColorOption8 {
+  background: rgba(255, 0, 214, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#eraserButton {
+  margin-top: 9px;
+  margin-left: 60px;
+  border: #737373 1px solid;
+  border-radius: 50%;
+}
+
+#eraserIcon {
+  width: 20px;
+  height: 25px;
+}
+
+#refreshButton {
+  margin-top: 9px;
+  margin-left: 60px;
+  margin-right: auto;
+  border: #737373 1px solid;
+  border-radius: 50%;
+}
+
+#refreshIcon {
+  width: 20px;
+  height: 25px;
+}
+
+footer {
+  margin-top: 20%;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: #737373;
+  font-family: Poppins;
+}
+
+#endButton {
+  display: flex;
+  width: 335px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 55px;
+  border-radius: 20px;
+}
+
+#endTitle{
+  font-size: 28px;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}

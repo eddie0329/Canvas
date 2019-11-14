@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gugi&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jquery -->
+    <script src="jquery/jquery-3.4.1.js"></script>
+
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="bootstrap/bootstrap.bundle.js"></script>
+
+    <title>Canvas</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- toast -->
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style="position: absolute; min-width: 300px; min-height: 100px; margin-top: 10px;"
+      >
+        <div
+          class="toast"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img
+              src="./images/smallLogo.png"
+              class="rounded mr-2"
+              alt="Canvas"
+            />
+            <strong class="mr-auto">Canvas</strong>
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            Hello, world! This is a toast message.
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div id="logoContainer">
+        <div id="logoTitle">Canvas</div>
+        <img id="logoImage" src="images/appLogo.png" alt="Canvas" />
+      </div>
+
+      <!-- info button -->
+      <div class="dropdown">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          style="display: flex; border-radius: 50%; width: 20px; height: 24px; margin-left: auto; margin-right: 10px;"
+        >
+          <div
+            style="font-weight: bold; margin-left: -1.7px; margin-top: -6px;"
+          >
+            i
+          </div>
+        </button>
+        <!-- dropdown menus -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div
+            class="dropdown-item"
+            style="font-weight: bold; font-size: 14px; font-family: 'Gugi', cursive;"
+          >
+            [단축키]
+          </div>
+
+          <div
+            class="dropdown-item"
+            style="font-weight: bold; font-size:13px; font-family: 'Gugi', cursive;"
+          >
+            Canvas 확장앱 열기:
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Alt + Shift + O (Window, linux)
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Command + Shift + O (Mac)
+          </div>
+          <div class="dropdown-item"></div>
+          <div
+            class="dropdown-item"
+            style="font-weight: bold; font-size:13px; font-family: 'Gugi', cursive;"
+          >
+            캡쳐(확장앱이 열린상태에서):
+          </div>
+          <div class="dropdown-item" style="font-size: 11px; ">
+            Alt + Shift + S (Window, Linux)
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Command + Shift + S (Mac)
+          </div>
+
+          <div
+            class="dropdown-item"
+            style="font-weight: bold; font-size:13px; font-family: 'Gugi', cursive;"
+          >
+            색상 추출(확장앱이 열린상태에서):
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Alt + Shift + C (Window, Linux)
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Command + Shift + X (Mac)
+          </div>
+          <div class="dropdown-item"></div>
+
+          <div
+            class="dropdown-item"
+            style="font-weight: bold; font-size:13px; font-family: 'Gugi', cursive;"
+          >
+            그리기(확장앱이 열린상태에서):
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Alt + Shift + D (Window, Linux)
+          </div>
+          <div class="dropdown-item" style="font-size: 11px;">
+            Command + Shift + A (Mac)
+          </div>
+          <div class="dropdown-item"></div>
+        </div>
+      </div>
+
+      <!-- capture button -->
+      <button type="button" class="btn btn-light" id="captureButton">
+        <img id="captureIcon" src="images/capture.png" alt="Capture" />
+        <div id="captureButtonTitle">Capture</div>
+      </button>
+      <!-- capture javascript -->
+      <script type="text/javascript" src="javascript/capture.js"></script>
+
+      <!-- color picker button -->
+      <div id="colorPickerButton">
+        <img id="spoidIcon" src="images/spoid.png" alt="Spoid" />
+        <div id="colorPickerButtonTitle">Color Picker</div>
+        <button id="paletteColor1"></button>
+        <button id="paletteColor2"></button>
+        <button id="paletteColor3"></button>
+        <button id="paletteColor4"></button>
+        <button id="paletteColor5"></button>
+        <button id="paletteColor6"></button>
+        <button id="paletteColor7"></button>
+        <button id="paletteColor8"></button>
+      </div>
+      <!-- color picker javascript -->
+      <script type="text/javascript" src="javascript/colorPicker.js"></script>
+
+      <!-- paint button -->
+      <button type="button" class="btn btn-light" id="paintButton">
+        <img id="penIcon" src="images/pen.png" alt="Pen" />
+        <div id="paintButtonTitle">Paint</div>
+      </button>
+      <div id="paintComponentContainer">
+        <button
+          id="paintColor"
+          type="button"
+          class="btn btn-secondary"
+          data-container="body"
+          data-toggle="popover"
+          data-html="true"
+          data-trigger="focus"
+          data-placement="bottom"
+          data-content="<div type=button id=paintColorOption1></div>
+                            <div type=button id=paintColorOption2></div>
+                            <div type=button id=paintColorOption3></div>
+                            <div type=button id=paintColorOption4></div>
+                            <div type=button id=paintColorOption5></div>
+                            <div type=button id=paintColorOption6></div>
+                            <div type=button id=paintColorOption7></div>
+                            <div type=button id=paintColorOption8></div>"
+        ></button>
+
+        <button id="eraserButton">
+          <img id="eraserIcon" src="images/eraser.png" alt="Eraser" />
+        </button>
+        <button id="refreshButton">
+          <img id="refreshIcon" src="images/refresh.png" alt="Refresh" />
+        </button>
+      </div>
+
+      <!-- End Button -->
+      <button id="endButton" type="button" class="btn btn-danger">
+        <div id="endTitle">End Canvas</div>
+      </button>
+
+      <!-- paint javascript -->
+      <script type="text/javascript" src="javascript/paint.js"></script>
+      <script type="text/javascript" src="javascript/paint_color.js"></script>
+      <script type="text/javascript" src="javascript/paint_eraser.js"></script>
+      <script type="text/javascript" src="javascript/paint_reset.js"></script>
+
+      <!-- End Canvas javascript -->
+      <script type="text/javascript" src="javascript/endCanvas.js"></script>
+
+      <!-- footer -->
+      <!-- <footer>
+        <div>Created by Eddie Sunny</div>
+      </footer> -->
+    </div>
+  </body>
+</html>

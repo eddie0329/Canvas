@@ -21,13 +21,27 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true;
 });
 
+
 // popover function for bootstrap
 $(document).ready(function() {
   $("#paintColor").popover();
+  $("#paintColor").tooltip({
+    placement: "bottom",
+    title: "Color Options",
+    trigger: 'hover'
+  });
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
+
+
 
 // main color
 let drawingColor = document.querySelector("#paintColor");
+
 
 //when dom tree changed -> because of the popover
 document.body.addEventListener(

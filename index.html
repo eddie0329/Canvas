@@ -38,11 +38,7 @@
         aria-atomic="true"
         style="position: absolute; min-width: 300px; min-height: 100px; margin-top: 10px;"
       >
-        <div
-          class="toast"
-          aria-live="polite"
-          aria-atomic="true"
-        >
+        <div class="toast" aria-live="polite" aria-atomic="true">
           <div class="toast-header">
             <img
               src="./images/smallLogo.png"
@@ -188,6 +184,7 @@
           class="btn btn-secondary"
           data-container="body"
           data-toggle="popover"
+          data-toggle="toolip"
           data-html="true"
           data-trigger="focus"
           data-placement="bottom"
@@ -201,10 +198,20 @@
                             <div type=button id=paintColorOption8></div>"
         ></button>
 
-        <button id="eraserButton">
+        <button
+          id="eraserButton"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Eraser"
+        >
           <img id="eraserIcon" src="images/eraser.png" alt="Eraser" />
         </button>
-        <button id="refreshButton">
+        <button
+          id="refreshButton"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Refresh"
+        >
           <img id="refreshIcon" src="images/refresh.png" alt="Refresh" />
         </button>
       </div>

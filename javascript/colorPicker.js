@@ -9,10 +9,10 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // };
     // whale.notifications.create("limitNotif", notifOptionsCaptureCompleted);
 
-    $(".toast").toast('dispose');
+    $(".toast").toast("dispose");
     $(".toast-body").text("'색상'이 선택 되었습니다.");
-    $(".toast").toast({delay: 2100});
-    $(".toast").toast('show');
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
 
     whale.sidebarAction.show();
     sendResponse("color picked");

@@ -1,13 +1,13 @@
 // create canvas and put after body
-canvas_colorPicker = document.querySelector("#canvas__colorPicker");
+canvasColorPicker = document.querySelector("#canvas__colorPicker");
 zoom = document.querySelector("#zoom");
 cross = document.querySelector("#cross");
 
-if (canvas_colorPicker === null && zoom === null) {
-  //create element for canvas_colorPicker
-  canvas_colorPicker = document.createElement("canvas");
-  canvas_colorPicker.id = "canvas__colorPicker";
-  document.body.append(canvas_colorPicker);
+if (canvasColorPicker === null && zoom === null) {
+  //create element for canvasColorPicker
+  canvasColorPicker = document.createElement("canvas");
+  canvasColorPicker.id = "canvas__colorPicker";
+  document.body.append(canvasColorPicker);
 
   //create element for zoom
   zoom = document.createElement("canvas");
@@ -20,11 +20,11 @@ if (canvas_colorPicker === null && zoom === null) {
 }
 
 //resizing
-canvas_colorPicker.height = window.innerHeight;
-canvas_colorPicker.width = window.innerWidth;
+canvasColorPicker.height = window.innerHeight;
+canvasColorPicker.width = window.innerWidth;
 
 //style of canvas
-canvas_colorPicker.style =
+canvasColorPicker.style =
   "position: absolute; z-index:9000; top: 0; left: 0; cursor: url(http://www.rw-designer.com/cursor-extern.php?id=96791), auto;";
 zoom.style =
   "position: absolute; z-index:9010; top: 30px; left: 30px; width: 130px; height: 130px; border-radius: 50%; border: 1px solid red;";
@@ -32,35 +32,35 @@ cross.style =
   "position: absolute; z-index:9999; top: 30px; left: 30px; width: 135px; height: 135px; border-radius: 50%;";
 
 //widnow height
-canvas_colorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
+canvasColorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
 zoom.style.marginTop = `${document.documentElement.scrollTop}px`;
 cross.style.marginTop = `${document.documentElement.scrollTop}px`;
 
 //adjusting cavnas when user scroll horizontally
-canvas_colorPicker.style.marginLeft = `${document.documentElement.scrollLeft}px`;
+canvasColorPicker.style.marginLeft = `${document.documentElement.scrollLeft}px`;
 zoom.style.marginLeft = `${document.documentElement.scrollLeft}px`;
 cross.style.marginLeft = `${document.documentElement.scrollLeft}px`;
 
 //contexts define
-ctx_colorPicker = canvas_colorPicker.getContext("2d");
-ctx_zoom = zoom.getContext("2d");
-ctx_cross = cross.getContext("2d");
+ctxColorPicker = canvasColorPicker.getContext("2d");
+ctxZoom = zoom.getContext("2d");
+ctxCross = cross.getContext("2d");
 
 //drawing cross
-ctx_cross.lineWidth = 1;
-ctx_cross.strokeStyle = "red";
-ctx_cross.beginPath();
-ctx_cross.moveTo(150, 0);
-ctx_cross.lineTo(150, 146);
-ctx_cross.moveTo(0, 75);
-ctx_cross.lineTo(290, 75);
-ctx_cross.stroke();
+ctxCross.lineWidth = 1;
+ctxCross.strokeStyle = "red";
+ctxCross.beginPath();
+ctxCross.moveTo(150, 0);
+ctxCross.lineTo(150, 146);
+ctxCross.moveTo(0, 75);
+ctxCross.lineTo(290, 75);
+ctxCross.stroke();
 
 //zoom image settings
-ctx_zoom.imageSmoothingEnabled = true;
-ctx_zoom.mozImageSmoothingEnabled = false;
-ctx_zoom.webkitImageSmoothingEnabled = true;
-ctx_zoom.msImageSmoothingEnabled = true;
+ctxZoom.imageSmoothingEnabled = true;
+ctxZoom.mozImageSmoothingEnabled = false;
+ctxZoom.webkitImageSmoothingEnabled = true;
+ctxZoom.msImageSmoothingEnabled = true;
 
 // drawing image into canvas
 function drawImg(imgData) {
@@ -71,16 +71,16 @@ function drawImg(imgData) {
         let ratio = window.devicePixelRatio;
 
         // drawing on canvas
-        ctx_colorPicker.drawImage(
+        ctxColorPicker.drawImage(
           imageObj,
           0,
           0,
-          canvas_colorPicker.width * ratio,
-          canvas_colorPicker.height * ratio,
+          canvasColorPicker.width * ratio,
+          canvasColorPicker.height * ratio,
           0,
           0,
-          canvas_colorPicker.width,
-          canvas_colorPicker.height
+          canvasColorPicker.width,
+          canvasColorPicker.height
         );
       };
       // image to draw
@@ -101,7 +101,7 @@ rgba = "";
 function pick(event) {
   var x = event.layerX;
   var y = event.layerY;
-  var pixel = ctx_colorPicker.getImageData(x, y, 1, 1);
+  var pixel = ctxColorPicker.getImageData(x, y, 1, 1);
   var data = pixel.data;
   rgba =
     "rgba(" +
@@ -114,10 +114,10 @@ function pick(event) {
     data[3] / 255 +
     ")";
 
-  ctx_zoom.drawImage(
-    canvas_colorPicker,
-    Math.min(Math.max(0, x - 5), canvas_colorPicker.width - 10),
-    Math.min(Math.max(0, y - 5), canvas_colorPicker.height - 10),
+  ctxZoom.drawImage(
+    canvasColorPicker,
+    Math.min(Math.max(0, x - 5), canvasColorPicker.width - 10),
+    Math.min(Math.max(0, y - 5), canvasColorPicker.height - 10),
     10,
     10,
     0,
@@ -128,8 +128,8 @@ function pick(event) {
 }
 
 // get rgba data
-canvas_colorPicker.addEventListener("mousemove", pick);
-canvas_colorPicker.addEventListener("click", () => {
+canvasColorPicker.addEventListener("mousemove", pick);
+canvasColorPicker.addEventListener("click", () => {
   document.querySelector("#canvas__colorPicker").remove();
   document.querySelector("#zoom").remove();
   document.querySelector("#cross").remove();
@@ -149,32 +149,32 @@ canvas_colorPicker.addEventListener("click", () => {
 
 scrollCapture = () => {
   //clear canvas
-  ctx_colorPicker.clearRect(
+  ctxColorPicker.clearRect(
     0,
     0,
-    canvas_colorPicker.width,
-    canvas_colorPicker.height
+    canvasColorPicker.width,
+    canvasColorPicker.height
   );
-  ctx_zoom.clearRect(0, 0, zoom.width, zoom.height);
-  ctx_cross.clearRect(0, 0, cross.width, cross.height);
+  ctxZoom.clearRect(0, 0, zoom.width, zoom.height);
+  ctxZoom.clearRect(0, 0, cross.width, cross.height);
 
   //drawing cross
-  ctx_cross.lineWidth = 1;
-  ctx_cross.strokeStyle = "red";
-  ctx_cross.beginPath();
-  ctx_cross.moveTo(150, 0);
-  ctx_cross.lineTo(150, 146);
-  ctx_cross.moveTo(0, 75);
-  ctx_cross.lineTo(290, 75);
-  ctx_cross.stroke();
+  ctxZoom.lineWidth = 1;
+  ctxZoom.strokeStyle = "red";
+  ctxZoom.beginPath();
+  ctxZoom.moveTo(150, 0);
+  ctxZoom.lineTo(150, 146);
+  ctxZoom.moveTo(0, 75);
+  ctxZoom.lineTo(290, 75);
+  ctxZoom.stroke();
 
   //adjusting cavnas when user scroll vertically
-  canvas_colorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
+  canvasColorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
   zoom.style.marginTop = `${document.documentElement.scrollTop}px`;
   cross.style.marginTop = `${document.documentElement.scrollTop}px`;
 
   //adjusting cavnas when user scroll horizontally
-  canvas_colorPicker.style.marginLeft = `${document.documentElement.scrollLeft}px`;
+  canvasColorPicker.style.marginLeft = `${document.documentElement.scrollLeft}px`;
   zoom.style.marginLeft = `${document.documentElement.scrollLeft}px`;
   cross.style.marginLeft = `${document.documentElement.scrollLeft}px`;
 
@@ -188,13 +188,20 @@ scrollCapture = () => {
 
 resizeCapture = () => {
   //widnow height
-  canvas_colorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
+  canvasColorPicker.style.marginTop = `${document.documentElement.scrollTop}px`;
   zoom.style.marginTop = `${document.documentElement.scrollTop}px`;
   cross.style.marginTop = `${document.documentElement.scrollTop}px`;
 
   //resizing
-  canvas_colorPicker.height = window.innerHeight;
-  canvas_colorPicker.width = window.innerWidth;
+  canvasColorPicker.height = window.innerHeight;
+  canvasColorPicker.width = window.innerWidth;
+
+  setTimeout(() => {
+    // order background script to screenshot the current tab page
+    whale.runtime.sendMessage("screenshot", response => {
+      drawImg(response);
+    });
+  }, 100);
 };
 
 //when user scroll its window

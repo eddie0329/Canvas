@@ -11,9 +11,9 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // whale.notifications.create("limitNotif", notifOptionsOp);
 
-    $(".toast").toast('dispose');
+    $(".toast").toast("dispose");
     $(".toast-body").text("'Paint 버튼'을 먼저 눌러 주세요!!");
-    $(".toast").toast({delay: 2100});
+    $(".toast").toast({ delay: 2100 });
     $(".toast").toast("show");
 
     sendResponse("option");
@@ -21,27 +21,22 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true;
 });
 
-
 // popover function for bootstrap
 $(document).ready(function() {
   $("#paintColor").popover();
   $("#paintColor").tooltip({
     placement: "bottom",
     title: "Color Options",
-    trigger: 'hover'
+    trigger: "hover"
   });
 });
 
-$(function () {
+$(function() {
   $('[data-toggle="tooltip"]').tooltip();
-})
-
-
-
+});
 
 // main color
 let drawingColor = document.querySelector("#paintColor");
-
 
 //when dom tree changed -> because of the popover
 document.body.addEventListener(
@@ -136,7 +131,7 @@ document.body.addEventListener(
       whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
         if (
           tab[0].url.match(/chrome:*/gi) ||
-          tab[0].url.match(/store.whale.*/gi) 
+          tab[0].url.match(/store.whale.*/gi)
         ) {
           alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
           return false;

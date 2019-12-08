@@ -1,3 +1,15 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * listener called -> if script excute in denied page, go 2) else 1) ->
+ * 1) hide sidebar -> excute content script
+ * 2) alert message
+ *
+ ******************************************************************************/
+
 // let notifOptionsBye = {
 //   type: "basic",
 //   iconUrl: "../images/logo.png",
@@ -9,7 +21,7 @@
 document.getElementById("endButton").addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();

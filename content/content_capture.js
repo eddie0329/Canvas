@@ -1,3 +1,20 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * if canvasCapture is null go 1) else go 2) -> 1) canvasCapture created ->
+ * after to its document body -> 2) ask background to get current tab browser ->
+ * send data to this script ->
+ * draw browser image on canvasCapture ->
+ * user select where they want to crop from image -> selected image re-draw into
+ * canvasTarget -> clipboard get canvasTarget data
+ *
+ ******************************************************************************/
+
+DEBUG = 0; // if DEBUG == 1, DEBUG on
+
 canvasCapture = document.querySelector("#canvas__capture");
 
 if (canvasCapture === null) {
@@ -129,7 +146,9 @@ canvasCapture.addEventListener("mouseup", function(e) {
     //send message for notification
     if (navigator.clipboard !== undefined) {
       whale.runtime.sendMessage("capture completed", response => {
-        // console.log(response);
+        if (DEBUG === 1) {
+          console.log(response);
+        }
       });
     }
   }, 100);

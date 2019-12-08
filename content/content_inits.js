@@ -1,3 +1,16 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * Initiation of all scripts
+ *
+ ******************************************************************************/
+
+//common
+let DEBUG = null;
+
 //initialization for painting
 let canvas = null;
 let ctx = null;

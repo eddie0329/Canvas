@@ -1,3 +1,16 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * listener called -> if script excute in denied page, go 2) else 1) ->
+ * 1) hide sidebar -> excute content script -> show sidebar -> if capture
+ *    success, toast message
+ * 2) alert message
+ *
+ ******************************************************************************/
+
 //when canvas is not created
 whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message == "capture completed") {
@@ -11,10 +24,10 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // whale.notifications.create("limitNotif", notifOptionsCaptureCompleted);
 
-    $(".toast").toast('dispose');
-    $(".toast-body").text("선택된 영역이 '클립보드'에 저장 되었습니다");
-    $(".toast").toast({delay: 2100});
-    $(".toast").toast('show');
+    $(".toast").toast("dispose");
+    $(".toast-body").text(CAPTURE_SUCCESS);
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
 
     whale.sidebarAction.show();
     sendResponse("capture completed");
@@ -31,7 +44,7 @@ whale.commands.onCommand.addListener(function(command) {
         tab[0].url.match(/chrome:*/gi) ||
         tab[0].url.match(/store.whale.*/gi)
       ) {
-        alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+        alert(ALERT_PAGE_DENIED);
         return false;
       } else {
         whale.sidebarAction.hide();
@@ -51,7 +64,7 @@ document.getElementById("captureButton").addEventListener("click", () => {
       tab[0].url.match(/store.whale.*/gi)
       // || tab[0].url.match(/whale:*/gi)
     ) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();

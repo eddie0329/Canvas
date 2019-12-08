@@ -1,3 +1,15 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * listener called -> if script excute in denied page, go 2) else 1) ->
+ * 1) excute content script
+ * 2) toast message
+ *
+ ******************************************************************************/
+
 //when canvas is not created
 whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message == "paint null") {
@@ -12,7 +24,7 @@ whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // whale.notifications.create("limitNotif", notifOptionsOp);
 
     $(".toast").toast("dispose");
-    $(".toast-body").text("'Paint 버튼'을 먼저 눌러 주세요!!");
+    $(".toast-body").text(PRESS_PAINT_FIRST);
     $(".toast").toast({ delay: 2100 });
     $(".toast").toast("show");
 
@@ -57,7 +69,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -76,7 +88,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -95,7 +107,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -114,7 +126,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -133,7 +145,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -152,7 +164,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -171,7 +183,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color
@@ -190,7 +202,7 @@ document.body.addEventListener(
           tab[0].url.match(/chrome:*/gi) ||
           tab[0].url.match(/store.whale.*/gi)
         ) {
-          alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+          alert(ALERT_PAGE_DENIED);
           return false;
         } else {
           //change the main color

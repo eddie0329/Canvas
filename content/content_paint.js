@@ -1,3 +1,14 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * canvas created -> append to its document body -> user click(mousedown)
+ * -> trace until user finish(mouseup) with color
+ *
+ ******************************************************************************/
+
 canvas = document.querySelector("#canvas__paint");
 
 // if canvas not created -> create canvas
@@ -15,7 +26,6 @@ if (document.querySelector("#canvas__paint") === null) {
     "position: absolute; z-index:8000; top: 0; left: 0; cursor: url(http://www.rw-designer.com/cursor-extern.php?id=72974), auto;";
   ctx = canvas.getContext("2d");
 }
-
 
 // define the color
 setTimeout(() => {
@@ -72,10 +82,3 @@ window.addEventListener("resize", () => {
   canvas.height = document.documentElement.scrollHeight;
   canvas.width = window.innerWidth;
 });
-
-// //window scrolled
-// window.addEventListener("scroll", () => {
-//   if(document.documentElement.scrollHeight !== canvas.height) {
-//     canvas.height = document.documentElement.scrollHeight;
-//   }
-// })

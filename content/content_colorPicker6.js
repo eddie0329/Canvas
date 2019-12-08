@@ -1,3 +1,19 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * if canvasColorPicker is null go 1) else go 2) ->
+ * 1) canvasColorPicker, zoom, cross created -> append to its document body ->
+ * 2)  ask background to get image of browser ->
+ * draw image into canvasColorPicker -> user pick color -> send color
+ * information to sidebar app
+ *
+ ******************************************************************************/
+
+DEBUG = 0; // if DEBUG == 1, DEBUG on
+
 // create canvas and put after body
 canvasColorPicker = document.querySelector("#canvas__colorPicker");
 zoom = document.querySelector("#zoom");
@@ -134,11 +150,15 @@ canvasColorPicker.addEventListener("click", () => {
   document.querySelector("#zoom").remove();
   document.querySelector("#cross").remove();
   whale.storage.local.set({ palette6: rgba }, function() {
-    // console.log("Value is set to " + rgba);
+    if (DEBUG === 1) {
+      console.log("Value is set to " + rgba);
+    }
   });
 
   whale.runtime.sendMessage("color picked", response => {
-    // console.log(response);
+    if (DEBUG === 1) {
+      console.log(response);
+    }
   });
 
   //remove all listners

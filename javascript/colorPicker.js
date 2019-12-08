@@ -1,3 +1,16 @@
+/*
+ *
+ * Copyright Eddie Sunny
+ * Released under the MIT license
+ *
+ * Script Execution Flow
+ * listener called -> if script excute in denied page, go 2) else 1) ->
+ * 1) hide sidebar -> excute content script -> show sidebar -> if colorpicked
+ *    success, toast message
+ * 2) alert message
+ *
+ ******************************************************************************/
+
 whale.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message == "color picked") {
     // create notification
@@ -65,7 +78,7 @@ paletteColor1.setAttribute(
 paletteColor1.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -84,7 +97,7 @@ whale.commands.onCommand.addListener(function(command) {
         tab[0].url.match(/chrome:*/gi) ||
         tab[0].url.match(/store.whale.*/gi)
       ) {
-        alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+        alert(ALERT_PAGE_DENIED);
         return false;
       } else {
         whale.sidebarAction.hide();
@@ -129,7 +142,7 @@ paletteColor2.setAttribute(
 paletteColor2.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -173,7 +186,7 @@ paletteColor3.setAttribute(
 paletteColor3.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -217,7 +230,7 @@ paletteColor4.setAttribute(
 paletteColor4.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -261,7 +274,7 @@ paletteColor5.setAttribute(
 paletteColor5.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -305,7 +318,7 @@ paletteColor6.setAttribute(
 paletteColor6.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -349,7 +362,7 @@ paletteColor7.setAttribute(
 paletteColor7.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();
@@ -393,7 +406,7 @@ paletteColor8.setAttribute(
 paletteColor8.addEventListener("click", () => {
   whale.tabs.query({ active: true, lastFocusedWindow: true }, tab => {
     if (tab[0].url.match(/chrome:*/gi) || tab[0].url.match(/store.whale.*/gi)) {
-      alert("이 페이지에는 'Canvas'를 사용할수 없습니다.");
+      alert(ALERT_PAGE_DENIED);
       return false;
     } else {
       whale.sidebarAction.hide();

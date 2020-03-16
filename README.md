@@ -2,9 +2,7 @@
 
 # Canvas - Whale Extension
 
-### 그리기, 색상 정보 추출, 캡쳐 가능한 사이드바 앱
-
-#### [다운로드](https://store.whale.naver.com/detail/nghifammpalkadhhjgdcjmdofgaenmfk)  | [시연영상](https://youtu.be/HGoyUjpSZL8)
+### 그리기, 색상 정보 추출, 캡쳐 가능한 사이드바 앱: [다운로드](https://store.whale.naver.com/detail/nghifammpalkadhhjgdcjmdofgaenmfk)  | [시연영상](https://youtu.be/HGoyUjpSZL8)
 
 주요기능
 -------------

@@ -64,6 +64,8 @@ function rgbToHex(rgbType) {
   return hexType;
 }
 
+let timmer;
+
 /****************************PALETTE COLOR 1***********************************/
 //defining the paletteColor1
 let paletteColor1 = document.querySelector("#paletteColor1");
@@ -87,6 +89,22 @@ paletteColor1.addEventListener("click", () => {
       });
     }
   });
+});
+
+// copy color
+paletteColor1.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor1.style.background));
+  }, 1500);
+});
+
+paletteColor1.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
 });
 
 //palette Color 1 command listner
@@ -153,6 +171,22 @@ paletteColor2.addEventListener("click", () => {
   });
 });
 
+// copy color
+paletteColor2.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor2.style.background));
+  }, 1500);
+});
+
+paletteColor2.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
+});
+
 // storage messaging
 whale.storage.onChanged.addListener(function(changes, namespace) {
   if (changes.palette2 === null || changes.palette2 === undefined) {
@@ -195,6 +229,22 @@ paletteColor3.addEventListener("click", () => {
       });
     }
   });
+});
+
+// copy color
+paletteColor3.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor3.style.background));
+  }, 1500);
+});
+
+paletteColor3.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
 });
 
 // storage messaging
@@ -241,6 +291,22 @@ paletteColor4.addEventListener("click", () => {
   });
 });
 
+// copy color
+paletteColor4.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor4.style.background));
+  }, 1500);
+});
+
+paletteColor4.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
+});
+
 // storage messaging
 whale.storage.onChanged.addListener(function(changes, namespace) {
   if (changes.palette4 === null || changes.palette4 === undefined) {
@@ -283,6 +349,22 @@ paletteColor5.addEventListener("click", () => {
       });
     }
   });
+});
+
+// copy color
+paletteColor5.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor5.style.background));
+  }, 1500);
+});
+
+paletteColor5.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
 });
 
 // storage messaging
@@ -329,6 +411,22 @@ paletteColor6.addEventListener("click", () => {
   });
 });
 
+// copy color
+paletteColor6.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor6.style.background));
+  }, 1500);
+});
+
+paletteColor6.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
+});
+
 // storage messaging
 whale.storage.onChanged.addListener(function(changes, namespace) {
   if (changes.palette6 === null || changes.palette6 === undefined) {
@@ -373,6 +471,22 @@ paletteColor7.addEventListener("click", () => {
   });
 });
 
+// copy color
+paletteColor7.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor7.style.background));
+  }, 1500);
+});
+
+paletteColor7.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
+});
+
 // storage messaging
 whale.storage.onChanged.addListener(function(changes, namespace) {
   if (changes.palette7 === null || changes.palette7 === undefined) {
@@ -415,6 +529,22 @@ paletteColor8.addEventListener("click", () => {
       });
     }
   });
+});
+
+// copy color
+paletteColor8.addEventListener("mouseover", () => {
+  timmer = setTimeout(() => {
+    $(".toast").toast("hide");
+    $(".toast").toast("dispose");
+    $(".toast-body").text("복사 되었습니다.");
+    $(".toast").toast({ delay: 2100 });
+    $(".toast").toast("show");
+    navigator.clipboard.writeText(rgbToHex(paletteColor8.style.background));
+  }, 1500);
+});
+
+paletteColor8.addEventListener("mouseleave", () => {
+  clearTimeout(timmer);
 });
 
 // storage messaging

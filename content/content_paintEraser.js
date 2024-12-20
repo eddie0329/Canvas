@@ -22,5 +22,5 @@ if (document.querySelector("#canvas__paint") === null) {
   // change the mode erasing
   mode = "erasing";
   document.querySelector("#canvas__paint").style.cursor =
-    "url(http://www.rw-designer.com/cursor-extern.php?id=72976), auto";
+    "url(https://www.rw-designer.com/cursor-extern.php?id=72976), auto";
 }

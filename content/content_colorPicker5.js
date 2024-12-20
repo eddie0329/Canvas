@@ -41,7 +41,7 @@ canvasColorPicker.width = window.innerWidth;
 
 //style of canvas
 canvasColorPicker.style =
-  "position: absolute; z-index:9000; top: 0; left: 0; cursor: url(http://www.rw-designer.com/cursor-extern.php?id=96791), auto;";
+  "position: absolute; z-index:9000; top: 0; left: 0; cursor: url(https://www.rw-designer.com/cursor-extern.php?id=96791), auto;";
 zoom.style =
   "position: absolute; z-index:9010; top: 30px; left: 30px; width: 130px; height: 130px; border-radius: 50%; border: 1px solid red;";
 cross.style =

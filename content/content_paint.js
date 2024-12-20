@@ -23,7 +23,7 @@ if (document.querySelector("#canvas__paint") === null) {
 
   //style of canvas
   canvas.style =
-    "position: absolute; z-index:8000; top: 0; left: 0; cursor: url(http://www.rw-designer.com/cursor-extern.php?id=72974), auto;";
+    "position: absolute; z-index:8000; top: 0; left: 0; cursor: url(https://www.rw-designer.com/cursor-extern.php?id=72974), auto;";
   ctx = canvas.getContext("2d");
 }
 

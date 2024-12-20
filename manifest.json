@@ -1,57 +1,66 @@
 {
-    "name": "Canvas",
-    "version": "1.1.3",
-    "manifest_version": 2,
+	"name": "Canvas",
+	"version": "1.1.4",
+	"manifest_version": 3,
 
-    "description": "그리기, 색상 정보 추출, 캡쳐 가능한 사이드바 앱",
-    "icons": {
-        "120": "images/logo.png"
-    },
+	"description": "그리기, 색상 정보 추출, 캡쳐 가능한 사이드바 앱",
+	"icons": {
+		"120": "images/logo.png"
+	},
 
-    "sidebar_action": {
-        "default_page": "index.html",
-        "default_title": "Canvas Sidebar",
-        "default_icon": {               
-            "16": "images/smallLogo.png"
-        },
-        "use_navigation_bar": false,
-        "mobile_user_agent": true
-    },
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
+	"sidebar_action": {
+		"default_page": "index.html",
+		"default_title": "Canvas Sidebar",
+		"default_icon": {
+			"16": "images/smallLogo.png"
+		},
+		"use_navigation_bar": false,
+		"mobile_user_agent": true
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
 
-    "permissions": ["<all_urls>", "activeTab", "tabs", "storage",  "http://*/*", "https://*/*", "notifications", "desktopCapture", "pageCapture"],
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"storage",
+		"notifications",
+		"desktopCapture",
+		"pageCapture",
+		"scripting"
+	],
 
-    "commands": {
-        "drawing": {
-            "suggested_key": {
-                "default": "Alt+Shift+D",
-                "mac": "Command+Shift+A"
-            },
-            "description": "execute paint button"
-        },
-        "capture": {
-            "suggested_key": {
-                "default": "Alt+Shift+S",
-                "mac": "Command+Shift+S"
-            },
-            "description": "execute capture button"
-        },
-        "colorPicker": {
-            "suggested_key": {
-                "default": "Alt+Shift+C",
-                "mac": "Command+Shift+X"
-            },
-            "description": "execute color picker palette1 button"
-        },
-        "openCanvas": {
-            "suggested_key": {
-                "default": "Alt+Shift+O",
-                "mac": "Command+Shift+O"
-            },
-            "description": "execute end canvas button"
-        }
-    }
+	"host_permissions": ["<all_urls>"],
+
+	"commands": {
+		"drawing": {
+			"suggested_key": {
+				"default": "Alt+Shift+D",
+				"mac": "Command+Shift+A"
+			},
+			"description": "execute paint button"
+		},
+		"capture": {
+			"suggested_key": {
+				"default": "Alt+Shift+S",
+				"mac": "Command+Shift+S"
+			},
+			"description": "execute capture button"
+		},
+		"colorPicker": {
+			"suggested_key": {
+				"default": "Alt+Shift+C",
+				"mac": "Command+Shift+X"
+			},
+			"description": "execute color picker palette1 button"
+		},
+		"openCanvas": {
+			"suggested_key": {
+				"default": "Alt+Shift+O",
+				"mac": "Command+Shift+O"
+			},
+			"description": "execute end canvas button"
+		}
+	}
 }

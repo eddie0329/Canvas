@@ -24,5 +24,5 @@ if (document.querySelector("#canvas__paint") === null) {
 
   mode = "pen";
   document.querySelector("#canvas__paint").style.cursor =
-    "url(http://www.rw-designer.com/cursor-extern.php?id=72974), auto";
+    "url(https://www.rw-designer.com/cursor-extern.php?id=72974), auto";
 }
